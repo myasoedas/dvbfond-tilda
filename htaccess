@@ -1,0 +1,26 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page17295691.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^header$ page17429107.html [NC]
+RewriteRule ^header/$ page17429107.html [NC]
+
+RewriteRule ^footer$ page17430643.html [NC]
+RewriteRule ^footer/$ page17430643.html [NC]
+
+RewriteRule ^01$ page21423998.html [NC]
+RewriteRule ^01/$ page21423998.html [NC]
+
+RewriteRule ^members/ ma_start.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild6534-3538-4439-b466-383338383938/favicon2ico.ico [R=302,L]
+
